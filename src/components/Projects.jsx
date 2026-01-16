@@ -25,6 +25,14 @@ const projects = [
         image: 'bg-gradient-to-br from-orange-500 to-pink-500',
         demoLink: '#',
         codeLink: '#'
+    },
+    {
+        title: 'Geniut',
+        description: 'An innovative technology project focused on advanced solutions.',
+        tags: ['React', 'Node.js', 'AI', 'GitHub'],
+        image: 'bg-gradient-to-br from-indigo-600 to-blue-500',
+        demoLink: '#',
+        codeLink: 'https://github.com/afeedaap/geniut'
     }
 ];
 

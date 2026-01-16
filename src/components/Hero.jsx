@@ -7,22 +7,62 @@ const Hero = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
                 <div className="max-w-3xl">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
+                        initial="hidden"
+                        animate="visible"
+                        variants={{
+                            hidden: { opacity: 0 },
+                            visible: {
+                                opacity: 1,
+                                transition: {
+                                    staggerChildren: 0.2
+                                }
+                            }
+                        }}
                     >
-                        <h2 className="text-primary font-semibold text-xl mb-2">Hello, I'm</h2>
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+                        <motion.h2
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                            }}
+                            className="text-primary font-semibold text-xl mb-2"
+                        >
+                            Hello, I'm
+                        </motion.h2>
+                        <motion.h1
+                            variants={{
+                                hidden: { opacity: 0, scale: 0.9 },
+                                visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
+                            }}
+                            className="text-4xl md:text-6xl font-bold text-white mb-4"
+                        >
                             Afeeda
-                        </h1>
-                        <h3 className="text-2xl md:text-3xl text-gray-300 mb-6 font-medium">
+                        </motion.h1>
+                        <motion.h3
+                            variants={{
+                                hidden: { opacity: 0, x: -20 },
+                                visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+                            }}
+                            className="text-2xl md:text-3xl text-gray-300 mb-6 font-medium"
+                        >
                             Software Engineer & <span className="text-primary">MERN Stack Expert</span>
-                        </h3>
-                        <p className="text-gray-400 mb-8 text-lg leading-relaxed">
+                        </motion.h3>
+                        <motion.p
+                            variants={{
+                                hidden: { opacity: 0 },
+                                visible: { opacity: 1, transition: { duration: 0.8 } }
+                            }}
+                            className="text-gray-400 mb-8 text-lg leading-relaxed"
+                        >
                             Passionate self-taught developer and tech enthusiast. I build accessible,
                             pixel-perfect, and performant web experiences using modern technologies.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        </motion.p>
+                        <motion.div
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                            }}
+                            className="flex flex-col sm:flex-row gap-4 justify-center"
+                        >
                             <Link
                                 to="contact"
                                 smooth={true}
@@ -39,7 +79,7 @@ const Hero = () => {
                             >
                                 View Resume
                             </a>
-                        </div>
+                        </motion.div>
                     </motion.div>
                 </div>
             </div>
