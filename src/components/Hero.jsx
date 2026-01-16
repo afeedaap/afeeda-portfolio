@@ -32,10 +32,12 @@ const Hero = () => {
                                 Hire Me
                             </Link>
                             <a
-                                href="#"
+                                href="https://drive.google.com/file/d/1rR_RSIc8z14C1gi9pvg76vQ-KA9b4OZc/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="px-8 py-3 border border-primary text-primary font-bold rounded-lg hover:bg-primary/10 transition-colors cursor-pointer"
                             >
-                                Download CV
+                                View Resume
                             </a>
                         </div>
                     </motion.div>

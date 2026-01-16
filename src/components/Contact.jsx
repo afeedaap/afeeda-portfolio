@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 const Contact = () => {
+    const [submitted, setSubmitted] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
     return (
         <section id="contact" className="py-20 bg-gray-900">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,15 +73,24 @@ const Contact = () => {
                         viewport={{ once: true }}
                         className="bg-gray-800 p-8 rounded-xl border border-gray-700"
                     >
-                        <form className="space-y-6">
+                        <iframe name="hidden_iframe" id="hidden_iframe" style={{ display: 'none' }} onLoad={() => { if (submitted) setShowPopup(true); }}></iframe>
+                        <form
+                            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfq18NUm-3EZhhqQbv01fE0gx4glS4HbJjsLtXqRf2nUhZONA/formResponse"
+                            method="POST"
+                            target="hidden_iframe"
+                            className="space-y-6"
+                            onSubmit={() => setSubmitted(true)}
+                        >
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">Name</label>
                                     <input
                                         type="text"
                                         id="name"
+                                        name="entry.1828095128"
                                         className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                                         placeholder="Your Name"
+                                        required
                                     />
                                 </div>
                                 <div>
@@ -86,29 +98,23 @@ const Contact = () => {
                                     <input
                                         type="email"
                                         id="email"
+                                        name="entry.992076492"
                                         className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                                         placeholder="your@email.com"
+                                        required
                                     />
                                 </div>
-                            </div>
-
-                            <div>
-                                <label htmlFor="subject" className="block text-sm font-medium text-gray-400 mb-2">Subject</label>
-                                <input
-                                    type="text"
-                                    id="subject"
-                                    className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
-                                    placeholder="Project Inquiry"
-                                />
                             </div>
 
                             <div>
                                 <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">Message</label>
                                 <textarea
                                     id="message"
+                                    name="entry.1470422920"
                                     rows="4"
                                     className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                                     placeholder="Tell me about your project..."
+                                    required
                                 ></textarea>
                             </div>
 
@@ -123,6 +129,37 @@ const Contact = () => {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Confirmation Popup */}
+            {showPopup && (
+                <div className="fixed inset-0 flex items-center justify-center z-50 px-4">
+                    <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => { setShowPopup(false); setSubmitted(false); }}></div>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        className="bg-gray-800 p-8 rounded-xl border border-gray-700 max-w-md w-full relative z-10 text-center"
+                    >
+                        <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <Send size={32} className="text-green-500" />
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+                        <p className="text-gray-400 mb-8">
+                            Thank you for reaching out. I'll get back to you as soon as possible.
+                        </p>
+                        <button
+                            onClick={() => {
+                                setShowPopup(false);
+                                setSubmitted(false);
+                                document.querySelector('form').reset();
+                            }}
+                            className="w-full bg-primary text-dark font-bold py-3 rounded-lg hover:bg-teal-400 transition-all"
+                        >
+                            Close
+                        </button>
+                    </motion.div>
+                </div>
+            )}
         </section>
     );
 };
