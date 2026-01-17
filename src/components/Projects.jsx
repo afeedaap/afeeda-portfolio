@@ -3,36 +3,28 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
     {
-        title: 'E-Commerce Platform',
-        description: 'A full-featured online store with cart functionality, payment integration, and admin dashboard.',
-        tags: ['React', 'Node.js', 'MongoDB', 'Redux'],
-        image: 'bg-gradient-to-br from-purple-600 to-blue-500', // Placeholder style
+        title: 'COZA Store E-commerce',
+        description: 'A fully responsive e-commerce website for fashion and clothing with modern UI, product catalog, shopping cart, and seamless checkout experience.',
+        tags: ['HTML', 'CSS', 'JavaScript', 'E-commerce'],
+        image: 'bg-gradient-to-br from-purple-600 to-pink-500',
         demoLink: '#',
-        codeLink: '#'
+        codeLink: 'https://github.com/afeedaap/coza_store'
     },
     {
-        title: 'Task Management App',
-        description: 'Collaborative task manager with real-time updates, drag-and-drop interface, and team features.',
-        tags: ['MERN Stack', 'Socket.io', 'Tailwind'],
-        image: 'bg-gradient-to-br from-emerald-500 to-teal-400',
+        title: 'OLX Clone',
+        description: 'A feature-rich classifieds marketplace clone with user authentication, product listings, search functionality, and real-time messaging using React and Firebase.',
+        tags: ['React', 'Firebase', 'Authentication', 'Real-time'],
+        image: 'bg-gradient-to-br from-teal-500 to-emerald-400',
         demoLink: '#',
-        codeLink: '#'
+        codeLink: 'https://github.com/afeedaap/olx-clone--final'
     },
     {
-        title: 'Social Media Dashboard',
-        description: 'Analytics dashboard helping users track engagement across multiple social platforms.',
-        tags: ['React', 'Chart.js', 'API Integration'],
-        image: 'bg-gradient-to-br from-orange-500 to-pink-500',
+        title: 'Netflix Clone',
+        description: 'A streaming platform UI clone featuring movie/TV show browsing, dynamic content fetching from TMDB API, responsive design, and Netflix-inspired animations.',
+        tags: ['React', 'TMDB API', 'CSS', 'Responsive'],
+        image: 'bg-gradient-to-br from-red-600 to-gray-900',
         demoLink: '#',
-        codeLink: '#'
-    },
-    {
-        title: 'Geniut',
-        description: 'An innovative technology project focused on advanced solutions.',
-        tags: ['React', 'Node.js', 'AI', 'GitHub'],
-        image: 'bg-gradient-to-br from-indigo-600 to-blue-500',
-        demoLink: '#',
-        codeLink: 'https://github.com/afeedaap/geniut'
+        codeLink: 'https://github.com/afeedaap/Netflix-clone'
     }
 ];
 
