@@ -26,7 +26,7 @@ const Hero = () => {
                             }}
                             className="text-primary font-semibold text-xl mb-2"
                         >
-                            Hello, I'm
+                            
                         </motion.h2>
                         <motion.h1
                             variants={{
@@ -35,7 +35,7 @@ const Hero = () => {
                             }}
                             className="text-4xl md:text-6xl font-bold text-white mb-4"
                         >
-                            Afeeda
+                            Hello, I'm Afeeda
                         </motion.h1>
                         <motion.h3
                             variants={{
@@ -53,8 +53,8 @@ const Hero = () => {
                             }}
                             className="text-gray-400 mb-8 text-lg leading-relaxed"
                         >
-                            Passionate self-taught developer and tech enthusiast. I build accessible,
-                            pixel-perfect, and performant web experiences using modern technologies.
+                            Motivated self-taught developer eager to build accessible, user-friendly,
+                             and responsive web applications using modern web technologies.
                         </motion.p>
                         <motion.div
                             variants={{
